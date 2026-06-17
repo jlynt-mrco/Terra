@@ -1031,12 +1031,12 @@ select.form-input option {
   width: 100%;
   max-width: 420px;
   height: 660px;
-  background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
-  border-radius: 36px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   padding: 0;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-xl);
   z-index: 1;
   position: relative;
 }
@@ -1063,7 +1063,7 @@ select.form-input option {
   height: 100%;
   padding: 40px 24px;
   text-align: center;
-  color: #FFFFFF;
+  color: var(--text-primary);
   z-index: 2;
   position: relative;
 }
@@ -1085,6 +1085,7 @@ select.form-input option {
   letter-spacing: 0.08em;
   margin-top: 6px;
   text-transform: uppercase;
+  color: var(--text-primary);
 }
 
 .welcome-illustration-container {
@@ -1110,7 +1111,7 @@ select.form-input option {
 .welcome-title {
   font-size: 1.8rem !important;
   font-weight: 800;
-  color: #FFFFFF !important;
+  color: var(--text-primary) !important;
   margin-bottom: 8px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
@@ -1118,7 +1119,7 @@ select.form-input option {
 
 .welcome-subtitle {
   font-size: var(--font-xs);
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--text-secondary);
   line-height: 1.5;
   max-width: 290px;
   margin: 0 auto;
@@ -1133,31 +1134,32 @@ select.form-input option {
 }
 
 .btn-welcome-create {
-  background: #FFFFFF !important;
-  color: #0F172A !important;
-  border-radius: 25px !important;
-  border: none !important;
+  background: var(--accent) !important;
+  color: var(--text-on-accent) !important;
+  border-radius: var(--radius-sm) !important;
+  border: 1px solid var(--accent) !important;
   padding: 14px 24px !important;
   font-weight: 700;
   font-size: var(--font-base);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
+  box-shadow: var(--shadow-sm);
   transition: all var(--transition-base);
 }
 
 .btn-welcome-create:hover {
-  background: rgba(255, 255, 255, 0.9) !important;
-  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.25);
+  background: #22252A !important;
+  border-color: #22252A !important;
+  box-shadow: var(--shadow-md);
   transform: translateY(-1px);
 }
 
 .btn-welcome-login {
   background: transparent !important;
-  color: #FFFFFF !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
-  border-radius: 25px !important;
+  color: var(--text-primary) !important;
+  border: 1.5px solid var(--accent) !important;
+  border-radius: var(--radius-sm) !important;
   padding: 13px 24px !important;
   font-weight: 700;
   font-size: var(--font-base);
@@ -1168,8 +1170,8 @@ select.form-input option {
 }
 
 .btn-welcome-login:hover {
-  background: rgba(255, 255, 255, 0.08) !important;
-  border-color: #FFFFFF !important;
+  background: var(--bg-tertiary) !important;
+  border-color: var(--accent) !important;
   transform: translateY(-1px);
 }
 
