@@ -1031,8 +1031,8 @@ select.form-input option {
   width: 100%;
   max-width: 420px;
   height: 660px;
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
+  background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: var(--radius-lg);
   overflow: hidden;
   padding: 0;
@@ -1063,7 +1063,7 @@ select.form-input option {
   height: 100%;
   padding: 40px 24px;
   text-align: center;
-  color: var(--text-primary);
+  color: #FFFFFF;
   z-index: 2;
   position: relative;
 }
@@ -1085,7 +1085,7 @@ select.form-input option {
   letter-spacing: 0.08em;
   margin-top: 6px;
   text-transform: uppercase;
-  color: var(--text-primary);
+  color: #FFFFFF;
 }
 
 .welcome-illustration-container {
@@ -1111,7 +1111,7 @@ select.form-input option {
 .welcome-title {
   font-size: 1.8rem !important;
   font-weight: 800;
-  color: var(--text-primary) !important;
+  color: #FFFFFF !important;
   margin-bottom: 8px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
@@ -1119,7 +1119,7 @@ select.form-input option {
 
 .welcome-subtitle {
   font-size: var(--font-xs);
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.7);
   line-height: 1.5;
   max-width: 290px;
   margin: 0 auto;
@@ -1134,31 +1134,30 @@ select.form-input option {
 }
 
 .btn-welcome-create {
-  background: var(--accent) !important;
-  color: var(--text-on-accent) !important;
+  background: #FFFFFF !important;
+  color: #0F172A !important;
   border-radius: var(--radius-sm) !important;
-  border: 1px solid var(--accent) !important;
+  border: none !important;
   padding: 14px 24px !important;
   font-weight: 700;
   font-size: var(--font-base);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   cursor: pointer;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
   transition: all var(--transition-base);
 }
 
 .btn-welcome-create:hover {
-  background: #22252A !important;
-  border-color: #22252A !important;
-  box-shadow: var(--shadow-md);
+  background: rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.25);
   transform: translateY(-1px);
 }
 
 .btn-welcome-login {
   background: transparent !important;
-  color: var(--text-primary) !important;
-  border: 1.5px solid var(--accent) !important;
+  color: #FFFFFF !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
   border-radius: var(--radius-sm) !important;
   padding: 13px 24px !important;
   font-weight: 700;
@@ -1170,8 +1169,8 @@ select.form-input option {
 }
 
 .btn-welcome-login:hover {
-  background: var(--bg-tertiary) !important;
-  border-color: var(--accent) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: #FFFFFF !important;
   transform: translateY(-1px);
 }
 
@@ -1182,7 +1181,7 @@ select.form-input option {
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--bg-secondary);
+  background: #0F172A;
   z-index: 10;
   transform: translateY(100%);
   transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1267,14 +1266,16 @@ select.form-input option {
 }
 
 .auth-sheet .auth-content-sheet {
-  background: var(--bg-secondary);
+  background: #0F172A;
   margin-top: -24px;
-  border-radius: 24px 24px 0 0;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   padding: 28px 24px 24px 24px;
   position: relative;
   z-index: 3;
   flex: 1;
   overflow-y: auto;
+  color: #FFFFFF;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   /* Hide scrollbar */
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -1284,35 +1285,41 @@ select.form-input option {
   display: none;
 }
 
+.auth-content-sheet .form-label {
+  color: rgba(255, 255, 255, 0.85);
+}
+
 .auth-content-sheet .form-input {
-  border-radius: 12px;
-  background: var(--bg-tertiary);
-  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: #1E293B;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 12px;
   padding-bottom: 12px;
+  color: #FFFFFF;
   transition: all var(--transition-base);
 }
 
 .auth-content-sheet .form-input:focus {
-  border-color: var(--accent);
-  background: var(--bg-secondary);
-  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.04);
+  border-color: #FFFFFF;
+  background: #1E293B;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
 }
 
 .auth-content-sheet .btn-primary {
-  border-radius: 25px;
+  border-radius: var(--radius-sm);
   padding: 14px 24px;
-  background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+  background: #FFFFFF;
+  color: #0F172A;
   border: none;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
 }
 
 .auth-content-sheet .btn-primary:hover {
-  background: linear-gradient(135deg, #334155 0%, #1e293b 100%);
-  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.3);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.25);
 }
 
 /* Auth Options (Checkbox and Lupa link) */
@@ -1331,7 +1338,7 @@ select.form-input option {
   cursor: pointer;
   user-select: none;
   font-weight: 600;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .auth-checkbox input {
@@ -1345,20 +1352,20 @@ select.form-input option {
 .checkbox-custom {
   width: 16px;
   height: 16px;
-  background-color: var(--bg-tertiary);
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
+  background-color: #1E293B;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-sm);
   transition: all 0.2s ease;
   position: relative;
 }
 
 .auth-checkbox:hover input ~ .checkbox-custom {
-  border-color: var(--text-secondary);
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 .auth-checkbox input:checked ~ .checkbox-custom {
-  background-color: #c24c83;
-  border-color: #c24c83;
+  background-color: #FFFFFF;
+  border-color: #FFFFFF;
 }
 
 .checkbox-custom::after {
@@ -1369,7 +1376,7 @@ select.form-input option {
   top: 2px;
   width: 4px;
   height: 8px;
-  border: solid white;
+  border: solid #0F172A;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
@@ -1379,13 +1386,13 @@ select.form-input option {
 }
 
 .auth-forgot-link {
-  color: var(--text-secondary) !important;
+  color: rgba(255, 255, 255, 0.6) !important;
   font-weight: 600;
   transition: color var(--transition-fast);
 }
 
 .auth-forgot-link:hover {
-  color: #c24c83 !important;
+  color: #FFFFFF !important;
 }
 
 /* Social Buttons */
@@ -1401,7 +1408,7 @@ select.form-input option {
   margin-bottom: var(--space-md);
   font-size: var(--font-xs);
   text-transform: uppercase;
-  color: var(--text-tertiary);
+  color: rgba(255, 255, 255, 0.4);
   font-weight: 700;
   letter-spacing: 0.05em;
   position: relative;
@@ -1412,7 +1419,7 @@ select.form-input option {
   content: '';
   flex: 1;
   height: 1px;
-  background: var(--border-color);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .auth-social-divider span {
@@ -1429,19 +1436,21 @@ select.form-input option {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: 1px solid var(--border-color);
-  background: var(--bg-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #1E293B;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all var(--transition-base);
   box-shadow: var(--shadow-sm);
+  color: #FFFFFF;
 }
 
 .social-btn:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
-  border-color: var(--text-tertiary);
+  border-color: rgba(255, 255, 255, 0.3);
+  background: #2D3748;
 }
 
 .social-btn.facebook {
@@ -1449,7 +1458,7 @@ select.form-input option {
 }
 
 .social-btn.apple {
-  color: #000000;
+  color: #FFFFFF;
 }
 
 .social-btn .icon {
@@ -1461,14 +1470,49 @@ select.form-input option {
   text-align: center;
   margin-top: var(--space-md);
   font-size: var(--font-xs);
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .auth-footer a {
-  color: #c24c83;
+  color: #FFFFFF;
   font-weight: 700;
   text-decoration: underline;
 }
+
+.auth-footer a:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Alerts inside Auth & Forms */
+.alert {
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-xs);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: var(--space-md);
+}
+
+.alert-danger {
+  background: rgba(220, 38, 38, 0.15);
+  border: 1.5px solid var(--danger);
+  color: #FCA5A5;
+}
+
+.alert-success {
+  background: rgba(21, 128, 61, 0.15);
+  border: 1.5px solid var(--success);
+  color: #86EFAC;
+}
+
+.alert-info {
+  background: rgba(29, 78, 216, 0.15);
+  border: 1.5px solid var(--info);
+  color: #93C5FD;
+}
+
 
 /* ============================================================
    Mountain Detail Hero (Bold, Monokrom Overlay)
