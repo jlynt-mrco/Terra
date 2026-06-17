@@ -1,0 +1,147 @@
+<?php
+require_once __DIR__ . '/../config.php';
+
+if (isLoggedIn()) {
+    redirect('pages/home.php');
+}
+
+$error = $_SESSION['auth_error'] ?? null;
+$success = $_SESSION['auth_success'] ?? null;
+unset($_SESSION['auth_error'], $_SESSION['auth_success']);
+?>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TERRA — Masuk ke akun pendakian Anda">
+    <title>Masuk — TERRA</title>
+    <link rel="stylesheet" href="<?= BASE_URL ?>/assets/css/style.css">
+</head>
+<body>
+    <div class="auth-page">
+        <div class="auth-card">
+            <div class="auth-header">
+                <div class="auth-logo">
+                    <img src="<?= BASE_URL ?>/logo/logo.png" alt="TERRA Logo" style="width:56px; height:56px; object-fit:contain; margin: 0 auto 8px auto; display: block;">
+                </div>
+                <h1 class="auth-title">Selamat Datang</h1>
+                <p class="auth-subtitle">Masuk ke akun TERRA Anda</p>
+            </div>
+
+            <?php if ($error): ?>
+                <div class="alert alert-danger mb-md">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--danger);margin-right:6px;"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    <span><?= sanitize($error) ?></span>
+                </div>
+            <?php endif; ?>
+
+            <?php if ($success): ?>
+                <div class="alert alert-success mb-md">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--success);margin-right:6px;"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span><?= sanitize($success) ?></span>
+                </div>
+            <?php endif; ?>
+
+            <form id="loginForm" action="<?= BASE_URL ?>/api/auth.php" method="POST">
+                <input type="hidden" name="action" value="login">
+
+                <div class="form-group">
+                    <label class="form-label" for="email">Email</label>
+                    <div class="form-input-icon">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            class="form-input"
+                            placeholder="nama@email.com"
+                            required
+                            autocomplete="email"
+                        >
+                    </div>
+                    <div class="form-error">Email tidak valid</div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="password">Password</label>
+                    <div class="form-input-icon">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            class="form-input"
+                            placeholder="Masukkan password"
+                            required
+                            minlength="6"
+                            autocomplete="current-password"
+                        >
+                        <span class="icon icon-right" id="togglePassword" style="cursor:pointer;">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                        </span>
+                    </div>
+                    <div class="form-error">Password minimal 6 karakter</div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block btn-lg mt-lg" id="loginBtn">
+                    Masuk
+                </button>
+            </form>
+
+            <div class="auth-divider">atau</div>
+
+            <div class="auth-footer">
+                Belum punya akun? <a href="<?= BASE_URL ?>/pages/register.php">Daftar Sekarang</a>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        // Toggle password visibility
+        const eyeOpen = `<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>`;
+        const eyeClosed = `<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>`;
+
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const pwd = document.getElementById('password');
+            if (pwd.type === 'password') {
+                pwd.type = 'text';
+                this.innerHTML = eyeClosed;
+            } else {
+                pwd.type = 'password';
+                this.innerHTML = eyeOpen;
+            }
+        });
+
+        // Form validation
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            const email = document.getElementById('email');
+            const password = document.getElementById('password');
+            let valid = true;
+
+            if (!email.value || !email.validity.valid) {
+                email.closest('.form-group').classList.add('error');
+                valid = false;
+            } else {
+                email.closest('.form-group').classList.remove('error');
+            }
+
+            if (!password.value || password.value.length < 6) {
+                password.closest('.form-group').classList.add('error');
+                valid = false;
+            } else {
+                password.closest('.form-group').classList.remove('error');
+            }
+
+            if (!valid) {
+                e.preventDefault();
+            } else {
+                document.getElementById('loginBtn').innerHTML = '<span class="spinner" style="width:20px;height:20px;border-width:2px;"></span> Memproses...';
+                document.getElementById('loginBtn').disabled = true;
+            }
+        });
+    </script>
+</body>
+</html>

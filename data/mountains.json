@@ -1,0 +1,248 @@
+[
+  {
+    "id": "mnt_semeru",
+    "name": "Gunung Semeru",
+    "location": "Lumajang, Jawa Timur",
+    "province": "Jawa Timur",
+    "altitude": 3676,
+    "quota_per_day": 600,
+    "difficulty": "hard",
+    "rating": 4.8,
+    "description": "Gunung Semeru atau Mahameru adalah gunung tertinggi di Pulau Jawa dengan ketinggian 3.676 mdpl. Terletak di Taman Nasional Bromo Tengger Semeru, gunung ini menawarkan pemandangan spektakuler danau Ranu Kumbolo dan hamparan savana.",
+    "image": "semeru",
+    "trails": [
+      {
+        "id": "trail_ranupani",
+        "name": "Ranu Pani",
+        "distance": "28 km",
+        "duration": "2-3 hari",
+        "difficulty": "hard"
+      }
+    ],
+    "posts": [
+      {"name": "Pos 1 — Ranu Pani", "altitude": 2100, "x": 15, "y": 85},
+      {"name": "Pos 2 — Ranu Kumbolo", "altitude": 2400, "x": 25, "y": 70},
+      {"name": "Pos 3 — Oro-oro Ombo", "altitude": 2700, "x": 40, "y": 55},
+      {"name": "Pos 4 — Cemoro Kandang", "altitude": 2900, "x": 55, "y": 42},
+      {"name": "Pos 5 — Kalimati", "altitude": 3200, "x": 70, "y": 28},
+      {"name": "Puncak Mahameru", "altitude": 3676, "x": 85, "y": 10}
+    ],
+    "water_points": [
+      {"name": "Sumber Air Ranu Kumbolo", "x": 28, "y": 68},
+      {"name": "Sumber Air Kalimati", "x": 68, "y": 30}
+    ],
+    "camping_areas": [
+      {"name": "Camp Ranu Kumbolo", "x": 25, "y": 72, "capacity": 200},
+      {"name": "Camp Kalimati", "x": 72, "y": 25, "capacity": 150}
+    ],
+    "peak": {"name": "Puncak Mahameru", "altitude": 3676, "x": 85, "y": 10}
+  },
+  {
+    "id": "mnt_rinjani",
+    "name": "Gunung Rinjani",
+    "location": "Lombok, Nusa Tenggara Barat",
+    "province": "Nusa Tenggara Barat",
+    "altitude": 3726,
+    "quota_per_day": 300,
+    "difficulty": "hard",
+    "rating": 4.9,
+    "description": "Gunung Rinjani adalah gunung berapi tertinggi kedua di Indonesia. Di puncaknya terdapat Danau Segara Anak yang sangat indah. Pendakian Rinjani adalah salah satu yang paling menantang dan memukau di Indonesia.",
+    "image": "rinjani",
+    "trails": [
+      {
+        "id": "trail_sembalun",
+        "name": "Sembalun",
+        "distance": "22 km",
+        "duration": "3-4 hari",
+        "difficulty": "hard"
+      },
+      {
+        "id": "trail_senaru",
+        "name": "Senaru",
+        "distance": "18 km",
+        "duration": "2-3 hari",
+        "difficulty": "hard"
+      }
+    ],
+    "posts": [
+      {"name": "Pos 1 — Sembalun Lawang", "altitude": 1150, "x": 12, "y": 88},
+      {"name": "Pos 2 — Tengengean", "altitude": 1800, "x": 28, "y": 68},
+      {"name": "Pos 3 — Plawangan Sembalun", "altitude": 2639, "x": 48, "y": 45},
+      {"name": "Danau Segara Anak", "altitude": 2010, "x": 55, "y": 55},
+      {"name": "Puncak Rinjani", "altitude": 3726, "x": 82, "y": 8}
+    ],
+    "water_points": [
+      {"name": "Sumber Air Pos 2", "x": 30, "y": 66},
+      {"name": "Danau Segara Anak", "x": 55, "y": 57}
+    ],
+    "camping_areas": [
+      {"name": "Camp Plawangan", "x": 48, "y": 47, "capacity": 100},
+      {"name": "Camp Segara Anak", "x": 57, "y": 53, "capacity": 150}
+    ],
+    "peak": {"name": "Puncak Rinjani", "altitude": 3726, "x": 82, "y": 8}
+  },
+  {
+    "id": "mnt_merbabu",
+    "name": "Gunung Merbabu",
+    "location": "Boyolali, Jawa Tengah",
+    "province": "Jawa Tengah",
+    "altitude": 3145,
+    "quota_per_day": 500,
+    "difficulty": "medium",
+    "rating": 4.7,
+    "description": "Gunung Merbabu terletak di perbatasan Kabupaten Magelang, Boyolali, dan Semarang. Dikenal dengan sabana luas yang indah dan pemandangan sunrise yang memukau dari puncaknya.",
+    "image": "merbabu",
+    "trails": [
+      {
+        "id": "trail_selo",
+        "name": "Selo",
+        "distance": "12 km",
+        "duration": "1-2 hari",
+        "difficulty": "medium"
+      },
+      {
+        "id": "trail_wekas",
+        "name": "Wekas",
+        "distance": "15 km",
+        "duration": "1-2 hari",
+        "difficulty": "medium"
+      }
+    ],
+    "posts": [
+      {"name": "Pos 1 — Selo", "altitude": 1600, "x": 10, "y": 85},
+      {"name": "Pos 2 — Sabana 1", "altitude": 2200, "x": 30, "y": 62},
+      {"name": "Pos 3 — Sabana 2", "altitude": 2700, "x": 52, "y": 40},
+      {"name": "Pos 4 — Watu Tulis", "altitude": 2950, "x": 70, "y": 25},
+      {"name": "Puncak Kenteng Songo", "altitude": 3145, "x": 88, "y": 10}
+    ],
+    "water_points": [
+      {"name": "Sumber Air Pos 1", "x": 14, "y": 82},
+      {"name": "Sumber Air Sabana", "x": 35, "y": 58}
+    ],
+    "camping_areas": [
+      {"name": "Camp Sabana 1", "x": 32, "y": 60, "capacity": 200},
+      {"name": "Camp Sabana 2", "x": 54, "y": 38, "capacity": 150}
+    ],
+    "peak": {"name": "Puncak Kenteng Songo", "altitude": 3145, "x": 88, "y": 10}
+  },
+  {
+    "id": "mnt_prau",
+    "name": "Gunung Prau",
+    "location": "Wonosobo, Jawa Tengah",
+    "province": "Jawa Tengah",
+    "altitude": 2565,
+    "quota_per_day": 800,
+    "difficulty": "easy",
+    "rating": 4.6,
+    "description": "Gunung Prau adalah destinasi favorit pendaki pemula. Terkenal dengan padang rumput luas di puncaknya dan pemandangan golden sunrise yang menakjubkan dengan latar belakang Gunung Sindoro-Sumbing.",
+    "image": "prau",
+    "trails": [
+      {
+        "id": "trail_dieng",
+        "name": "Dieng via Patak Banteng",
+        "distance": "6 km",
+        "duration": "4-6 jam",
+        "difficulty": "easy"
+      },
+      {
+        "id": "trail_kalilembu",
+        "name": "Kalilembu",
+        "distance": "5 km",
+        "duration": "3-5 jam",
+        "difficulty": "easy"
+      }
+    ],
+    "posts": [
+      {"name": "Pos 1 — Basecamp", "altitude": 1800, "x": 10, "y": 82},
+      {"name": "Pos 2 — Hutan Pinus", "altitude": 2100, "x": 32, "y": 58},
+      {"name": "Pos 3 — Padang Rumput", "altitude": 2400, "x": 58, "y": 35},
+      {"name": "Puncak Prau", "altitude": 2565, "x": 85, "y": 12}
+    ],
+    "water_points": [
+      {"name": "Sumber Air Basecamp", "x": 14, "y": 80}
+    ],
+    "camping_areas": [
+      {"name": "Camp Padang Rumput", "x": 60, "y": 33, "capacity": 300},
+      {"name": "Camp Puncak", "x": 83, "y": 15, "capacity": 200}
+    ],
+    "peak": {"name": "Puncak Prau", "altitude": 2565, "x": 85, "y": 12}
+  },
+  {
+    "id": "mnt_bromo",
+    "name": "Gunung Bromo",
+    "location": "Probolinggo, Jawa Timur",
+    "province": "Jawa Timur",
+    "altitude": 2329,
+    "quota_per_day": 1000,
+    "difficulty": "easy",
+    "rating": 4.5,
+    "description": "Gunung Bromo adalah salah satu gunung berapi paling ikonik di Indonesia. Terletak di Taman Nasional Bromo Tengger Semeru, kawah aktifnya yang mengeluarkan asap dan lautan pasirnya menjadi daya tarik utama.",
+    "image": "bromo",
+    "trails": [
+      {
+        "id": "trail_cemoro_lawang",
+        "name": "Cemoro Lawang",
+        "distance": "5 km",
+        "duration": "2-3 jam",
+        "difficulty": "easy"
+      }
+    ],
+    "posts": [
+      {"name": "Pos 1 — Cemoro Lawang", "altitude": 2100, "x": 10, "y": 75},
+      {"name": "Pos 2 — Lautan Pasir", "altitude": 2100, "x": 35, "y": 60},
+      {"name": "Pos 3 — Tangga Kawah", "altitude": 2250, "x": 60, "y": 40},
+      {"name": "Bibir Kawah Bromo", "altitude": 2329, "x": 85, "y": 20}
+    ],
+    "water_points": [
+      {"name": "Warung Cemoro Lawang", "x": 12, "y": 73}
+    ],
+    "camping_areas": [
+      {"name": "Camp Cemoro Lawang", "x": 12, "y": 77, "capacity": 500}
+    ],
+    "peak": {"name": "Bibir Kawah Bromo", "altitude": 2329, "x": 85, "y": 20}
+  },
+  {
+    "id": "mnt_gede",
+    "name": "Gunung Gede",
+    "location": "Cianjur, Jawa Barat",
+    "province": "Jawa Barat",
+    "altitude": 2958,
+    "quota_per_day": 400,
+    "difficulty": "medium",
+    "rating": 4.6,
+    "description": "Gunung Gede terletak di Taman Nasional Gunung Gede Pangrango. Dikenal dengan keanekaragaman hayati yang luar biasa, air terjun, dan padang edelweis yang cantik di dekat puncaknya.",
+    "image": "gede",
+    "trails": [
+      {
+        "id": "trail_cibodas",
+        "name": "Cibodas",
+        "distance": "10 km",
+        "duration": "7-9 jam",
+        "difficulty": "medium"
+      },
+      {
+        "id": "trail_gunung_putri",
+        "name": "Gunung Putri",
+        "distance": "12 km",
+        "duration": "8-10 jam",
+        "difficulty": "medium"
+      }
+    ],
+    "posts": [
+      {"name": "Pos 1 — Cibodas", "altitude": 1500, "x": 10, "y": 88},
+      {"name": "Pos 2 — Air Terjun Cibeureum", "altitude": 1800, "x": 22, "y": 72},
+      {"name": "Pos 3 — Kandang Batu", "altitude": 2200, "x": 40, "y": 52},
+      {"name": "Pos 4 — Surya Kencana", "altitude": 2600, "x": 60, "y": 32},
+      {"name": "Puncak Gede", "altitude": 2958, "x": 82, "y": 12}
+    ],
+    "water_points": [
+      {"name": "Air Terjun Cibeureum", "x": 24, "y": 70},
+      {"name": "Sumber Air Kandang Batu", "x": 42, "y": 50}
+    ],
+    "camping_areas": [
+      {"name": "Camp Surya Kencana", "x": 62, "y": 30, "capacity": 100},
+      {"name": "Camp Kandang Batu", "x": 42, "y": 48, "capacity": 80}
+    ],
+    "peak": {"name": "Puncak Gede", "altitude": 2958, "x": 82, "y": 12}
+  }
+]
