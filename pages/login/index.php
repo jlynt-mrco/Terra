@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/../../config.php';
 
 if (isLoggedIn()) {
     redirect('pages/home.php');
@@ -24,9 +24,9 @@ $action = $_GET['action'] ?? '';
     <div class="auth-page">
         <div class="auth-card">
             
-            <?php include __DIR__ . '/login/welcome.php'; ?>
-            <?php include __DIR__ . '/login/masuk.php'; ?>
-            <?php include __DIR__ . '/login/daftar.php'; ?>
+            <?php include __DIR__ . '/welcome.php'; ?>
+            <?php include __DIR__ . '/masuk.php'; ?>
+            <?php include __DIR__ . '/daftar.php'; ?>
 
         </div>
     </div>

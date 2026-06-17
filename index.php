@@ -8,5 +8,5 @@ require_once __DIR__ . '/config.php';
 if (isLoggedIn()) {
     redirect('pages/home.php');
 } else {
-    redirect('pages/login.php');
+    redirect('pages/login/index.php');
 }

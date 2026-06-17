@@ -17,7 +17,7 @@ switch ($action) {
         handleLogout();
         break;
     default:
-        redirect('pages/login.php');
+        redirect('pages/login/index.php');
 }
 
 function handleLogin() {
@@ -26,7 +26,7 @@ function handleLogin() {
 
     if (empty($email) || empty($password)) {
         $_SESSION['auth_error'] = 'Email dan password wajib diisi.';
-        redirect('pages/login.php');
+        redirect('pages/login/index.php');
     }
 
     $users = readJSON(USERS_FILE);
@@ -41,7 +41,7 @@ function handleLogin() {
 
     if (!$foundUser || !verifyPassword($password, $foundUser['password'])) {
         $_SESSION['auth_error'] = 'Email atau password salah.';
-        redirect('pages/login.php');
+        redirect('pages/login/index.php');
     }
 
     // Set session
@@ -62,27 +62,27 @@ function handleRegister() {
     // Validation
     if (empty($name) || empty($email) || empty($phone) || empty($password)) {
         $_SESSION['auth_error'] = 'Semua field wajib diisi.';
-        redirect('pages/register.php');
+        redirect('pages/login/index.php?action=register');
     }
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $_SESSION['auth_error'] = 'Format email tidak valid.';
-        redirect('pages/register.php');
+        redirect('pages/login/index.php?action=register');
     }
 
     if (!preg_match('/^[0-9]{10,13}$/', $phone)) {
         $_SESSION['auth_error'] = 'Nomor telepon tidak valid (10-13 digit angka).';
-        redirect('pages/register.php');
+        redirect('pages/login/index.php?action=register');
     }
 
     if (strlen($password) < 6) {
         $_SESSION['auth_error'] = 'Password minimal 6 karakter.';
-        redirect('pages/register.php');
+        redirect('pages/login/index.php?action=register');
     }
 
     if ($password !== $passwordConfirm) {
         $_SESSION['auth_error'] = 'Konfirmasi password tidak cocok.';
-        redirect('pages/register.php');
+        redirect('pages/login/index.php?action=register');
     }
 
     // Check existing email
@@ -90,7 +90,7 @@ function handleRegister() {
     foreach ($users as $user) {
         if (strtolower($user['email']) === strtolower($email)) {
             $_SESSION['auth_error'] = 'Email sudah terdaftar. Silakan login.';
-            redirect('pages/register.php');
+            redirect('pages/login/index.php?action=register');
         }
     }
 
@@ -108,12 +108,12 @@ function handleRegister() {
     writeJSON(USERS_FILE, $users);
 
     $_SESSION['auth_success'] = 'Akun berhasil dibuat! Silakan masuk.';
-    redirect('pages/login.php');
+    redirect('pages/login/index.php');
 }
 
 function handleLogout() {
     session_destroy();
     session_start();
     $_SESSION['auth_success'] = 'Anda telah keluar.';
-    redirect('pages/login.php');
+    redirect('pages/login/index.php');
 }

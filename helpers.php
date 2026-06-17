@@ -45,7 +45,7 @@ function getCurrentUser() {
 
 function requireLogin() {
     if (!isLoggedIn()) {
-        redirect('pages/login.php');
+        redirect('pages/login/index.php');
         exit;
     }
 }
