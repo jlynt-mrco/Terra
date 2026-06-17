@@ -36,11 +36,11 @@
 
     function startLoading() {
         if (progressTimer) clearInterval(progressTimer);
-        
+
         progressWidth = 5;
         loadingBar.style.width = progressWidth + '%';
         loadingBar.style.opacity = '1';
-        
+
         // Animasi bar maju secara gradual
         progressTimer = setInterval(() => {
             if (progressWidth < 85) {
@@ -55,7 +55,7 @@
 
     function stopLoading() {
         if (progressTimer) clearInterval(progressTimer);
-        
+
         loadingBar.style.width = '100%';
         setTimeout(() => {
             loadingBar.style.opacity = '0';
@@ -123,7 +123,7 @@
     // Menjalankan kembali tag script agar fitur JS halaman bekerja (secara sekuensial)
     function executeScripts(container) {
         const scripts = Array.from(container.querySelectorAll('script'));
-        
+
         isCollectingListeners = true;
         capturedListeners.length = 0; // Bersihkan listener lama
 
@@ -133,7 +133,7 @@
                 if (oldScript.src) {
                     const newScript = document.createElement('script');
                     Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
-                    
+
                     newScript.onload = () => resolve();
                     newScript.onerror = () => {
                         console.error('TERRA PJAX: Gagal memuat script:', oldScript.src);
@@ -159,7 +159,7 @@
             return promiseChain.then(() => runScript(script));
         }, Promise.resolve()).then(() => {
             isCollectingListeners = false;
-            
+
             // Panggil event listeners DOMContentLoaded yang tertangkap secara manual
             capturedListeners.forEach(listener => {
                 try {
@@ -249,8 +249,8 @@
             anchor.hasAttribute('download') ||
             anchor.hasAttribute('data-no-pjax') ||
             anchor.getAttribute('href').startsWith('#') ||
-            url.includes('/api/') || 
-            url.includes('logout')    
+            url.includes('/api/') ||
+            url.includes('logout')
         ) {
             return;
         }
