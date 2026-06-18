@@ -26,6 +26,11 @@ define('BASE_URL', $protocol . '://' . $host . '/Terra');
 define('USERS_FILE', DATA_PATH . '/users.json');
 define('MOUNTAINS_FILE', DATA_PATH . '/mountains.json');
 define('BOOKINGS_FILE', DATA_PATH . '/bookings.json');
+define('CHAT_GROUPS_FILE', DATA_PATH . '/chat_groups.json');
+define('GROUP_MEMBERS_FILE', DATA_PATH . '/group_members.json');
+define('CHAT_MESSAGES_FILE', DATA_PATH . '/chat_messages.json');
+define('DM_ROOMS_FILE', DATA_PATH . '/direct_message_rooms.json');
+define('DM_MESSAGES_FILE', DATA_PATH . '/direct_messages.json');
 
 // App config
 define('APP_NAME', 'TERRA');
