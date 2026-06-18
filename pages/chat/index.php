@@ -50,7 +50,7 @@ require_once __DIR__ . '/../../includes/header.php';
 <div class="container" style="padding: 0;">
     <div class="chat-container-inner">
         <!-- Index Page: No active-room class, so it displays the sidebar list on mobile -->
-        <div id="chatContainer" class="chat-page-container" style="grid-template-columns: 280px 1fr;">
+        <div id="chatContainer" class="chat-page-container two-columns">
             
             <!-- Sidebar Component -->
             <?php 

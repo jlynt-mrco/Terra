@@ -2864,10 +2864,14 @@ a.profile-menu-item:hover {
 .chat-page-container {
   display: grid;
   grid-template-columns: 280px 1fr 280px;
-  height: calc(100vh - var(--header-height) - var(--bottom-nav-height));
+  height: calc(100vh - var(--header-height) - var(--bottom-nav-height) - 40px);
   background: var(--bg-primary);
   overflow: hidden;
   box-sizing: border-box;
+}
+
+.chat-page-container.two-columns {
+  grid-template-columns: 280px 1fr;
 }
 
 .chat-sidebar-left {
@@ -3116,7 +3120,8 @@ a.profile-menu-item:hover {
 
 .chat-search-results {
   position: absolute;
-  top: calc(var(--header-height) + 50px);
+  top: 100%;
+  margin-top: 4px;
   left: var(--space-md);
   right: var(--space-md);
   background: white;
@@ -3147,6 +3152,9 @@ a.profile-menu-item:hover {
   .chat-page-container {
     grid-template-columns: 260px 1fr;
   }
+  .chat-page-container.two-columns {
+    grid-template-columns: 260px 1fr;
+  }
   .chat-panel-right {
     display: none;
   }
@@ -3156,6 +3164,9 @@ a.profile-menu-item:hover {
   .chat-page-container {
     grid-template-columns: 1fr;
     height: calc(100vh - var(--header-height) - var(--bottom-nav-height));
+  }
+  .chat-page-container.two-columns {
+    grid-template-columns: 1fr;
   }
   .chat-sidebar-left {
     display: flex;
