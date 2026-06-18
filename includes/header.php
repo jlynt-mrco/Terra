@@ -16,6 +16,7 @@ if (!isset($user) && isLoggedIn()) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?= isset($page_desc) ? htmlspecialchars($page_desc) : 'TERRA — Dashboard Pendakian Gunung Indonesia' ?>">
     <title><?= isset($page_title) ? htmlspecialchars($page_title) . ' — TERRA' : 'TERRA' ?></title>
+    <link rel="icon" type="image/png" href="<?= BASE_URL ?>/logo/logo.png">
     <link rel="stylesheet" href="<?= BASE_URL ?>/assets/css/style.css">
     <script src="<?= BASE_URL ?>/assets/js/app.js" defer></script>
     <?php if (isset($extra_css)): ?>

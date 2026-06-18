@@ -29,7 +29,7 @@ $difficultyLabels = ['easy' => 'Mudah', 'medium' => 'Menengah', 'hard' => 'Sulit
 $page_title = sanitize($mountain['name']);
 $page_desc = sanitize($mountain['name']) . ' — Informasi pendakian, kuota, cuaca, dan peta jalur';
 $hide_header = true;
-$page_wrapper_style = 'padding-bottom:calc(var(--bottom-nav-height) + 80px);';
+$page_wrapper_style = 'padding-bottom:calc(var(--bottom-nav-height) + 20px);';
 $extra_css = '
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
@@ -450,8 +450,9 @@ require_once __DIR__ . '/../includes/header.php';
                 </div>
             </div>
         </div>
-    <div class="sticky-cta">
-        <a href="<?= BASE_URL ?>/pages/booking.php?mountain=<?= $mountainId ?>" class="btn btn-primary btn-block btn-lg">
+    <!-- Daftar Pendakian Button (Normal flow) -->
+    <div style="padding: 0 var(--space-md); margin-top: var(--space-lg); margin-bottom: var(--space-md);">
+        <a href="<?= BASE_URL ?>/pages/booking.php?mountain=<?= $mountainId ?>" class="btn btn-primary btn-block btn-lg" style="display: flex; align-items: center; justify-content: center; width: 100%;">
             Daftar Pendakian
         </a>
     </div>

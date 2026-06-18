@@ -27,7 +27,7 @@ require_once __DIR__ . '/../includes/header.php';
                         <?php endif; ?>
                     </p>
                     <h1 class="hero-title" style="color:white;margin-top:4px;font-size:var(--font-xl);"><?= sanitize($user['name']) ?></h1>
-                    <p style="color:rgba(255,255,255,0.6);font-size:var(--font-xs);margin-top:2px;">Siap untuk petualangan berikutnya?</p>
+                    <?php include __DIR__ . '/location/location.php'; ?>
                 </div>
             </div>
         </section>
@@ -79,6 +79,50 @@ require_once __DIR__ . '/../includes/header.php';
                     <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
                 </span>
                 <input type="text" id="searchInput" placeholder="Cari gunung..." autocomplete="off">
+            </div>
+        </div>
+
+        <!-- Categories Menu -->
+        <div class="container" style="margin-top: -10px; margin-bottom: var(--space-md);">
+            <div class="glass-card-static p-md" style="box-shadow: var(--shadow-sm); border-radius: var(--radius-lg); background: var(--bg-secondary);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-sm);">
+                    <h3 style="font-size: 11px; font-weight: 850; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-primary); margin: 0; display: flex; align-items: center; gap: 6px;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px;color:var(--text-primary);"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                        Kategori Layanan
+                    </h3>
+                    <span style="font-size: 9px; font-weight: 800; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.05em;">TERRA</span>
+                </div>
+                <div class="categories-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-xs); text-align: center;">
+                    
+                    <a href="<?= BASE_URL ?>/pages/open_trip.php" class="category-item">
+                        <div class="category-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <span>Open Trip</span>
+                    </a>
+
+                    <a href="<?= BASE_URL ?>/pages/nearby_mountains.php" class="category-item">
+                        <div class="category-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <span>Gunung Terdekat</span>
+                    </a>
+
+                    <a href="<?= BASE_URL ?>/pages/booking_porter.php" class="category-item">
+                        <div class="category-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        </div>
+                        <span>Porter & Pemandu</span>
+                    </a>
+
+                    <a href="<?= BASE_URL ?>/pages/rental.php" class="category-item">
+                        <div class="category-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                        </div>
+                        <span>Rental Alat Camping</span>
+                    </a>
+                    
+                </div>
             </div>
         </div>
 
@@ -141,6 +185,8 @@ require_once __DIR__ . '/../includes/header.php';
                 }
             });
         });
+
+
     </script>
 <?php
 $active_page = 'home';

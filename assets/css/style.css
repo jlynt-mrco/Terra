@@ -285,7 +285,7 @@ h5 {
 
 .page-wrapper {
   min-height: 100vh;
-  padding-bottom: calc(var(--bottom-nav-height) + var(--space-lg));
+  padding-bottom: var(--bottom-nav-height);
 }
 
 .section {
@@ -1021,26 +1021,47 @@ select.form-input option {
   padding: var(--space-lg) var(--space-md);
   position: relative;
   background-image:
-    linear-gradient(rgba(250, 250, 250, 0.94), rgba(250, 250, 250, 0.94)),
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(rgba(17, 24, 39, 0.96), rgba(3, 7, 18, 0.98)),
     url('../../logo/background.jpeg');
-  background-size: cover;
-  background-position: center;
+  background-size: 20px 20px, 20px 20px, cover, cover;
+  background-position: left top, left top, center center, center center;
+  background-repeat: repeat, repeat, no-repeat, no-repeat;
+  background-attachment: scroll, scroll, fixed, fixed;
 }
 
 .auth-card {
   width: 100%;
   max-width: 400px;
   height: 680px;
-  background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: var(--accent-gradient);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 32px;
   overflow: hidden;
   padding: 0;
-  box-shadow: var(--shadow-xl);
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.3), 0 0 50px -10px rgba(0, 0, 0, 0.15);
   z-index: 1;
   position: relative;
   display: flex;
   flex-direction: column;
+}
+
+.auth-card-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 280px;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.auth-card-bg-overlay svg {
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
 }
 
 @media (max-width: 480px) {
@@ -1068,6 +1089,16 @@ select.form-input option {
   color: #FFFFFF;
   z-index: 2;
   position: relative;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.sheet-active .auth-welcome-screen {
+  opacity: 0;
+  transform: translateY(-24px) scale(0.96);
+  pointer-events: none;
+  visibility: hidden;
 }
 
 .welcome-logo-container {
@@ -1082,6 +1113,7 @@ select.form-input option {
   width: 32px;
   height: 32px;
   object-fit: contain;
+  filter: brightness(0) invert(1);
 }
 
 .welcome-brand-name {
@@ -1139,7 +1171,7 @@ select.form-input option {
 
 .btn-welcome-create {
   background: #FFFFFF !important;
-  color: #0F172A !important;
+  color: var(--accent) !important;
   border-radius: 30px !important;
   border: none !important;
   padding: 14px 24px !important;
@@ -1148,20 +1180,20 @@ select.form-input option {
   text-transform: none !important;
   letter-spacing: 0px !important;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
   transition: all var(--transition-base);
 }
 
 .btn-welcome-create:hover {
   background: rgba(255, 255, 255, 0.9) !important;
-  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.25);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
   transform: translateY(-1px);
 }
 
 .btn-welcome-login {
-  background: rgba(255, 255, 255, 0.08) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
   color: #FFFFFF !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.3) !important;
   border-radius: 30px !important;
   padding: 13px 24px !important;
   font-weight: 700;
@@ -1173,7 +1205,7 @@ select.form-input option {
 }
 
 .btn-welcome-login:hover {
-  background: rgba(255, 255, 255, 0.15) !important;
+  background: rgba(255, 255, 255, 0.12) !important;
   border-color: #FFFFFF !important;
   transform: translateY(-1px);
 }
@@ -1237,6 +1269,7 @@ select.form-input option {
   color: var(--text-primary);
   display: flex;
   flex-direction: column;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.15);
   /* Hide scrollbar */
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -1257,8 +1290,8 @@ select.form-input option {
 
 .auth-content-sheet-curved .form-input {
   border-radius: 12px;
-  background: var(--bg-tertiary);
-  border: 1.5px solid transparent;
+  background: #FFFFFF;
+  border: 1.5px solid var(--border-color);
   padding: 13px 16px;
   color: var(--text-primary);
   font-size: 13px;
@@ -1268,13 +1301,43 @@ select.form-input option {
 .auth-content-sheet-curved .form-input:focus {
   border-color: var(--accent);
   background: #FFFFFF;
-  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+.auth-content-sheet-curved .form-group.error .form-input {
+  border-color: var(--danger) !important;
+  background: #FFF8F8;
+}
+
+.auth-content-sheet-curved .form-input-icon .form-input {
+  padding-right: 44px;
+}
+
+.auth-content-sheet-curved .form-input-icon .icon-right {
+  right: 12px;
+  z-index: 10;
+  pointer-events: all !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.auth-content-sheet-curved .form-input-icon .icon-right svg {
+  position: static !important;
+  transform: none !important;
+  left: auto !important;
+  top: auto !important;
+  margin: 0 !important;
+  pointer-events: none !important;
 }
 
 /* Main gradient button */
 .btn-gradient {
-  background: linear-gradient(135deg, #F97316 0%, #EF4444 100%) !important;
-  color: #FFFFFF !important;
+  background: var(--accent-gradient) !important;
+  color: var(--text-on-accent) !important;
   border-radius: 30px !important;
   border: none !important;
   padding: 14px 24px !important;
@@ -1282,7 +1345,7 @@ select.form-input option {
   font-size: var(--font-base);
   text-transform: none !important;
   letter-spacing: 0px !important;
-  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.25) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12) !important;
   cursor: pointer;
   transition: all var(--transition-base);
   display: inline-flex;
@@ -1292,13 +1355,20 @@ select.form-input option {
 }
 
 .btn-gradient:hover {
-  background: linear-gradient(135deg, #EA580C 0%, #DC2626 100%) !important;
-  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.35) !important;
+  background: var(--accent-gradient-2) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18) !important;
   transform: translateY(-1px);
 }
 
 .btn-gradient:active {
   transform: scale(0.98);
+}
+
+.btn-gradient:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
 }
 
 /* Auth Options (Checkbox and Lupa link) */
@@ -1328,10 +1398,10 @@ select.form-input option {
   width: 0;
 }
 
-.checkbox-custom {
+.auth-checkbox .checkbox-custom {
   width: 16px;
   height: 16px;
-  background-color: var(--bg-tertiary);
+  background-color: #FFFFFF;
   border: 1.5px solid var(--border-color);
   border-radius: 4px;
   transition: all 0.2s ease;
@@ -1343,8 +1413,8 @@ select.form-input option {
 }
 
 .auth-checkbox input:checked ~ .checkbox-custom {
-  background-color: var(--accent);
-  border-color: var(--accent);
+  background-color: var(--accent) !important;
+  border-color: var(--accent) !important;
 }
 
 .checkbox-custom::after {
@@ -1371,7 +1441,7 @@ select.form-input option {
 }
 
 .auth-forgot-link:hover {
-  color: #EF4444 !important;
+  color: var(--accent) !important;
 }
 
 /* Social Buttons */
@@ -1412,11 +1482,11 @@ select.form-input option {
   margin-bottom: 12px;
 }
 
-.social-btn {
+.auth-content-sheet-curved .social-btn {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid var(--border-color);
+  border: 1.5px solid var(--border-color);
   background: #FFFFFF;
   display: flex;
   align-items: center;
@@ -1426,11 +1496,11 @@ select.form-input option {
   color: var(--text-primary);
 }
 
-.social-btn:hover {
+.auth-content-sheet-curved .social-btn:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
-  border-color: var(--border-color-hover);
-  background: var(--bg-tertiary);
+  border-color: var(--accent);
+  background: #FAFAFA;
 }
 
 .social-btn.facebook {
@@ -1455,15 +1525,14 @@ select.form-input option {
 }
 
 .auth-footer a {
-  color: #EF4444;
+  color: var(--accent);
   font-weight: 700;
   text-decoration: underline;
 }
 
 .auth-footer a:hover {
-  color: #DC2626;
+  color: var(--text-secondary);
 }
-
 /* Alerts inside Auth & Forms */
 .alert {
   padding: 12px 16px;
@@ -2733,4 +2802,56 @@ a.profile-menu-item:hover {
 .content-fade.is-loading {
   opacity: 0;
   transform: translateY(12px);
+}
+
+/* ============================================================
+   Categories Menu & Interactive Items
+   ============================================================ */
+.category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  padding: 8px 4px;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.category-icon-wrapper {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bg-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-xs);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-base);
+}
+
+.category-item span {
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--text-secondary);
+  line-height: 1.25;
+  transition: color var(--transition-base);
+}
+
+.category-item:hover .category-icon-wrapper {
+  background: var(--accent) !important;
+  color: var(--bg-secondary) !important;
+  border-color: var(--accent) !important;
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.category-item:hover span {
+  color: var(--text-primary) !important;
+}
+
+.category-item:active .category-icon-wrapper {
+  transform: scale(0.95);
 }

@@ -107,8 +107,12 @@ function handleRegister() {
     $users[] = $newUser;
     writeJSON(USERS_FILE, $users);
 
-    $_SESSION['auth_success'] = 'Akun berhasil dibuat! Silakan masuk.';
-    redirect('pages/login/index.php');
+    // Auto-login registered user directly
+    $_SESSION['user_id'] = $newUser['id'];
+    $_SESSION['user_name'] = $newUser['name'];
+    $_SESSION['user_email'] = $newUser['email'];
+
+    redirect('pages/home.php');
 }
 
 function handleLogout() {

@@ -4,7 +4,7 @@
         "name": "Ranks Tester",
         "email": "tester@test.com",
         "phone": "081234567899",
-        "password": "$2y$10$hptR8dTmX3E/LnNRbO63eef07ReqRreuyPEXsRHoDOYXyC.EUJQuK",
+        "password": "$2y$10$hptR8dTmX3E\/LnNRbO63eef07ReqRreuyPEXsRHoDOYXyC.EUJQuK",
         "created_at": "2026-06-13T10:00:00"
     },
     {
@@ -39,5 +39,21 @@
         "phone": "081234567890",
         "password": "$2y$10$WsTZdsRymR.vwS8NE.ZBNOV1XYOTO9.LCy0QKXoia1fTWAC4qFWa6",
         "created_at": "2026-06-11T09:19:42"
+    },
+    {
+        "id": "usr_71d91b95b8f821ca",
+        "name": "Julyant Marco Melandry",
+        "email": "julyantmarco@gmail.com",
+        "phone": "0895808726543",
+        "password": "$2y$10$Ufq7sTq8cix9HdmTwxph3uP0XjiosneLaIxdz5cOO8VJwFLlHoF8m",
+        "created_at": "2026-06-17T13:32:01"
+    },
+    {
+        "id": "usr_f84b8715233da339",
+        "name": "Erlangga Dimas Suryadi Ningrat",
+        "email": "erlangga@gmail.com",
+        "phone": "0895808726543",
+        "password": "$2y$10$wjWDhvVbedMm47YBXV3LNe0a9LCMRlMKO2kCtsowPQhJdNLn8kXT2",
+        "created_at": "2026-06-17T13:40:41"
     }
 ]

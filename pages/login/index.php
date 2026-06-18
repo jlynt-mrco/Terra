@@ -18,11 +18,25 @@ $action = $_GET['action'] ?? '';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="TERRA — Sistem Onboarding Pendakian Gunung Indonesia">
     <title>Masuk — TERRA</title>
+    <link rel="icon" type="image/png" href="<?= BASE_URL ?>/logo/logo.png">
     <link rel="stylesheet" href="<?= BASE_URL ?>/assets/css/style.css">
 </head>
 <body>
     <div class="auth-page">
         <div class="auth-card">
+            <!-- Concentric geometric circles background overlay matching mockup -->
+            <div class="auth-card-bg-overlay">
+                <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <circle cx="50" cy="-20" r="30" stroke="rgba(255,255,255,0.06)" stroke-width="0.5" fill="none" />
+                    <circle cx="50" cy="-20" r="40" stroke="rgba(255,255,255,0.06)" stroke-width="0.5" fill="none" />
+                    <circle cx="50" cy="-20" r="50" stroke="rgba(255,255,255,0.06)" stroke-width="0.5" fill="none" />
+                    <circle cx="50" cy="-20" r="60" stroke="rgba(255,255,255,0.06)" stroke-width="0.5" fill="none" />
+                    <circle cx="50" cy="-20" r="70" stroke="rgba(255,255,255,0.06)" stroke-width="0.5" fill="none" />
+                    <circle cx="50" cy="-20" r="80" stroke="rgba(255,255,255,0.06)" stroke-width="0.5" fill="none" />
+                    <circle cx="50" cy="-20" r="90" stroke="rgba(255,255,255,0.06)" stroke-width="0.5" fill="none" />
+                    <circle cx="50" cy="-20" r="100" stroke="rgba(255,255,255,0.06)" stroke-width="0.5" fill="none" />
+                </svg>
+            </div>
             
             <!-- 1. LANDING WELCOME SCREEN -->
             <div class="auth-welcome-screen">
@@ -32,45 +46,64 @@ $action = $_GET['action'] ?? '';
                     <div class="welcome-brand-name">TERRA</div>
                 </div>
 
-                <!-- Mountain SVG Illustration (Nature & Mountaineering theme) -->
+                <!-- Mountain SVG Illustration (Premium Sporty Luxury theme) -->
                 <div class="welcome-illustration-container">
                     <svg class="welcome-illustration" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
                         <defs>
-                            <linearGradient id="mountGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#384252" stop-opacity="0.4"/>
-                                <stop offset="100%" stop-color="#0f172a" stop-opacity="0.9"/>
+                            <linearGradient id="mountGradBack" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#374151" stop-opacity="0.5"/>
+                                <stop offset="100%" stop-color="#111827" stop-opacity="0.85"/>
                             </linearGradient>
-                            <linearGradient id="sunGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#F97316" stop-opacity="0.85"/>
-                                <stop offset="100%" stop-color="#EF4444" stop-opacity="0.3"/>
+                            <linearGradient id="mountGradFront" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="#1f2937" stop-opacity="0.9"/>
+                                <stop offset="100%" stop-color="#030712" stop-opacity="0.98"/>
+                            </linearGradient>
+                            <linearGradient id="glowSun" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.4"/>
+                                <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.0"/>
                             </linearGradient>
                         </defs>
-                        <!-- Rising Sun -->
-                        <circle cx="100" cy="70" r="24" fill="url(#sunGrad)"/>
-                        <!-- Rear mountain -->
-                        <polygon points="40,120 95,55 150,120" fill="url(#mountGrad)" />
-                        <!-- Front mountains -->
-                        <polygon points="10,120 70,72 130,120" fill="url(#mountGrad)" style="transform: translateX(20px); opacity: 0.95;" />
-                        <polygon points="80,120 140,65 200,120" fill="url(#mountGrad)" style="transform: translateX(-25px); opacity: 0.85;" />
-                        <!-- Ground line -->
-                        <path d="M 0 120 Q 50 116 100 120 T 200 120 L 200 130 L 0 130 Z" fill="#0f172a" opacity="0.95"/>
+                        <!-- Glowing Sun/Moon -->
+                        <circle cx="100" cy="70" r="28" fill="url(#glowSun)"/>
+                        <circle cx="100" cy="70" r="28" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1" fill="none" />
                         
-                        <!-- Playful/Abstract shapes like mockup -->
-                        <circle cx="140" cy="45" r="6" fill="#10B981" opacity="0.8"/> <!-- green circle -->
-                        <polygon points="45,45 47,38 49,45 56,47 49,49 47,56 45,49 38,47" fill="#FFFFFF" opacity="0.7" /> <!-- star -->
+                        <!-- Altimeter/Trekking Grid background lines -->
+                        <line x1="20" y1="120" x2="180" y2="120" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1" stroke-dasharray="4,4" />
+                        <line x1="20" y1="95" x2="180" y2="95" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1" stroke-dasharray="4,4" />
+                        
+                        <!-- Rear mountain -->
+                        <polygon points="40,120 95,55 150,120" fill="url(#mountGradBack)" />
+                        <polyline points="40,120 95,55 150,120" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1" fill="none" />
+                        
+                        <!-- Front mountains -->
+                        <polygon points="10,120 70,72 130,120" fill="url(#mountGradFront)" style="transform: translateX(15px); opacity: 0.95;" />
+                        <polyline points="10,120 70,72 130,120" stroke="rgba(255, 255, 255, 0.35)" stroke-width="1.5" fill="none" style="transform: translateX(15px); opacity: 0.95;" />
+                        
+                        <polygon points="80,120 140,65 200,120" fill="url(#mountGradFront)" style="transform: translateX(-15px); opacity: 0.9;" />
+                        <polyline points="80,120 140,65 200,120" stroke="rgba(255, 255, 255, 0.3)" stroke-width="1.5" fill="none" style="transform: translateX(-15px); opacity: 0.9;" />
+                        
+                        <!-- Ground line -->
+                        <path d="M 0 120 Q 50 117 100 120 T 200 120 L 200 135 L 0 135 Z" fill="#030712" />
+                        
+                        <!-- Altitude tracking route path (luxury gold accents) -->
+                        <path d="M 35 120 Q 55 105 75 90 T 115 72 T 132 68" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="3,3" fill="none" opacity="0.8" />
+                        <circle cx="132" cy="68" r="3" fill="#F59E0B" /> <!-- Summit flag point -->
+                        
+                        <!-- Elegant white star -->
+                        <polygon points="45,40 47,33 49,40 56,42 49,44 47,51 45,44 38,42" fill="#FFFFFF" opacity="0.6" />
                     </svg>
                 </div>
 
                 <!-- Welcome Text -->
                 <div class="welcome-text-container">
-                    <h1 class="welcome-title">Welcome =)</h1>
-                    <p class="welcome-subtitle">Mulai petualangan mendaki gunung Anda bersama TERRA. Masuk atau daftarkan akun baru Anda.</p>
+                    <h1 class="welcome-title">halo, Petualang!</h1>
+                    <p class="welcome-subtitle">Puncak impianmu kini lebih dekat. Pesan tiket pendakian dengan mudah dan mulailah petualanganmu bersama TERRA.</p>
                 </div>
 
                 <!-- Onboarding Buttons -->
                 <div class="welcome-buttons-container">
-                    <button class="btn-welcome-create" onclick="openRegisterSheet()">Create Account</button>
-                    <button class="btn-welcome-login" onclick="openLoginSheet()">Log In</button>
+                    <button class="btn-welcome-create" onclick="openRegisterSheet()">Daftar Akun</button>
+                    <button class="btn-welcome-login" onclick="openLoginSheet()">Masuk</button>
                 </div>
             </div>
 
@@ -80,10 +113,10 @@ $action = $_GET['action'] ?? '';
                 <div class="auth-sheet-header-gradient">
                     <a href="#" class="auth-back-btn" onclick="closeSheets(event)">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-                        Back
+                        Kembali
                     </a>
-                    <h1 class="welcome-title">Welcome Back</h1>
-                    <p class="welcome-subtitle">Ready to continue your mountaineering journey?<br>Your path is right here.</p>
+                    <h1 class="welcome-title">Selamat Datang Kembali</h1>
+                    <p class="welcome-subtitle">Siap untuk melanjutkan petualangan mendaki Anda?<br>Jalur Anda ada di sini.</p>
                 </div>
 
                 <!-- Curved White Sheet for form details -->
@@ -106,12 +139,12 @@ $action = $_GET['action'] ?? '';
                         <input type="hidden" name="action" value="login">
 
                         <div class="form-group">
-                            <label class="form-label" for="login_email">Enter email</label>
+                            <label class="form-label" for="login_email">Masukkan Email</label>
                             <input type="email" id="login_email" name="email" class="form-input" placeholder="nama@email.com" required autocomplete="email">
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label" for="login_password">Password</label>
+                            <label class="form-label" for="login_password">Kata Sandi</label>
                             <div class="form-input-icon">
                                 <input type="password" id="login_password" name="password" class="form-input" placeholder="••••••••" required minlength="6" autocomplete="current-password">
                                 <span class="icon icon-right" id="toggleLoginPassword" style="cursor:pointer;">
@@ -125,20 +158,20 @@ $action = $_GET['action'] ?? '';
                             <label class="auth-checkbox">
                                 <input type="checkbox" name="remember" id="remember">
                                 <span class="checkbox-custom"></span>
-                                <span>Remember me</span>
+                                <span>Ingat saya</span>
                             </label>
-                            <a href="#" class="auth-forgot-link" onclick="alert('Fitur Lupa Password sedang dinonaktifkan')">Forgot password?</a>
+                            <a href="#" class="auth-forgot-link" onclick="alert('Fitur Lupa Password sedang dinonaktifkan')">Lupa kata sandi?</a>
                         </div>
 
                         <button type="submit" class="btn-gradient" id="loginBtn">
-                            Log In
+                            Masuk
                         </button>
                     </form>
 
                     <!-- Social logins -->
                     <div class="auth-social-group">
                         <div class="auth-social-divider">
-                            <span>Sign in with</span>
+                            <span>Masuk dengan</span>
                         </div>
                         <div class="auth-social-buttons">
                             <a href="#" class="social-btn facebook" onclick="alert('Login dengan Facebook sedang dinonaktifkan')">
@@ -154,7 +187,7 @@ $action = $_GET['action'] ?? '';
                     </div>
 
                     <div class="auth-footer">
-                        Don't have an account? <a href="#" onclick="switchToRegister(event)">Sign Up</a>
+                        Belum punya akun? <a href="#" onclick="switchToRegister(event)">Daftar</a>
                     </div>
                 </div>
             </div>
@@ -165,10 +198,10 @@ $action = $_GET['action'] ?? '';
                 <div class="auth-sheet-header-gradient">
                     <a href="#" class="auth-back-btn" onclick="closeSheets(event)">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-                        Back
+                        Kembali
                     </a>
-                    <h1 class="welcome-title">Create Your Account</h1>
-                    <p class="welcome-subtitle">We're here to help you start your climb.<br>Are you ready?</p>
+                    <h1 class="welcome-title">Daftar Akun Anda</h1>
+                    <p class="welcome-subtitle">Kami di sini untuk membantu Anda memulai pendakian.<br>Apakah Anda siap?</p>
                 </div>
 
                 <!-- Curved White Sheet for form details -->
@@ -184,22 +217,22 @@ $action = $_GET['action'] ?? '';
                         <input type="hidden" name="action" value="register">
 
                         <div class="form-group">
-                            <label class="form-label" for="reg_name">Enter full name</label>
+                            <label class="form-label" for="reg_name">Nama Lengkap</label>
                             <input type="text" id="reg_name" name="name" class="form-input" placeholder="Nama Lengkap" required autocomplete="name">
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label" for="reg_email">Enter email</label>
+                            <label class="form-label" for="reg_email">Alamat Email</label>
                             <input type="email" id="reg_email" name="email" class="form-input" placeholder="nama@email.com" required autocomplete="email">
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label" for="reg_phone">Enter phone number</label>
+                            <label class="form-label" for="reg_phone">Nomor Telepon</label>
                             <input type="tel" id="reg_phone" name="phone" class="form-input" placeholder="08xxxxxxxxxx" required pattern="[0-9]{10,13}" autocomplete="tel">
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label" for="reg_password">Enter password</label>
+                            <label class="form-label" for="reg_password">Kata Sandi</label>
                             <div class="form-input-icon">
                                 <input type="password" id="reg_password" name="password" class="form-input" placeholder="Minimal 6 karakter" required minlength="6" autocomplete="new-password">
                                 <span class="icon icon-right" id="toggleRegPassword" style="cursor:pointer;">
@@ -220,19 +253,19 @@ $action = $_GET['action'] ?? '';
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label" for="reg_password_confirm">Confirm password</label>
+                            <label class="form-label" for="reg_password_confirm">Konfirmasi Kata Sandi</label>
                             <input type="password" id="reg_password_confirm" name="password_confirm" class="form-input" placeholder="Ulangi password" required minlength="6" autocomplete="new-password">
                         </div>
 
                         <button type="submit" class="btn-gradient" id="registerBtn">
-                            Get Started
+                            Mulai Sekarang
                         </button>
                     </form>
 
                     <!-- Social logins -->
                     <div class="auth-social-group">
                         <div class="auth-social-divider">
-                            <span>Sign up with</span>
+                            <span>Daftar dengan</span>
                         </div>
                         <div class="auth-social-buttons">
                             <a href="#" class="social-btn facebook" onclick="alert('Login dengan Facebook sedang dinonaktifkan')">
@@ -248,7 +281,7 @@ $action = $_GET['action'] ?? '';
                     </div>
 
                     <div class="auth-footer">
-                        Already have an account? <a href="#" onclick="switchToLogin(event)">Log In</a>
+                        Sudah punya akun? <a href="#" onclick="switchToLogin(event)">Masuk</a>
                     </div>
                 </div>
             </div>
@@ -261,21 +294,25 @@ $action = $_GET['action'] ?? '';
         // DOM Sheets Elements
         const loginSheet = document.getElementById('loginSheet');
         const registerSheet = document.getElementById('registerSheet');
+        const authCard = document.querySelector('.auth-card');
 
         function openLoginSheet() {
             loginSheet.classList.add('sheet-open');
             registerSheet.classList.remove('sheet-open');
+            authCard.classList.add('sheet-active');
         }
 
         function openRegisterSheet() {
             registerSheet.classList.add('sheet-open');
             loginSheet.classList.remove('sheet-open');
+            authCard.classList.add('sheet-active');
         }
 
         function closeSheets(e) {
             if (e) e.preventDefault();
             loginSheet.classList.remove('sheet-open');
             registerSheet.classList.remove('sheet-open');
+            authCard.classList.remove('sheet-active');
         }
 
         function switchToRegister(e) {

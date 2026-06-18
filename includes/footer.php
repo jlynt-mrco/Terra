@@ -3,10 +3,6 @@
  * TERRA — Common Footer
  */
 ?>
-        <!-- Spacer for bottom nav -->
-        <?php if (!isset($hide_bottom_nav) || !$hide_bottom_nav): ?>
-        <div style="height:var(--space-xl);"></div>
-        <?php endif; ?>
         </main>
     </div>
 
